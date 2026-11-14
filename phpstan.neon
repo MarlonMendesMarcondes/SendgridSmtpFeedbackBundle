@@ -1,0 +1,10 @@
+# Análise estática do plugin. Rode dentro do container (ver README, "Desenvolvimento").
+parameters:
+    level: 8
+    paths:
+        - Service
+        - EventListener
+        - DependencyInjection
+    bootstrapFiles:
+        - /var/www/html/vendor/autoload.php
+    tmpDir: /tmp/phpstan-sendgrid-callback
