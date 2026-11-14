@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\SendgridCallbackBundle\Tests\Unit\EventListener;
+namespace MauticPlugin\SendgridSmtpFeedbackBundle\Tests\Unit\EventListener;
 
 use Mautic\CoreBundle\Helper\CoreParametersHelper;
 use Mautic\EmailBundle\EmailEvents;
 use Mautic\EmailBundle\Event\TransportWebhookEvent;
 use Mautic\EmailBundle\Model\TransportCallback;
 use Mautic\LeadBundle\Entity\DoNotContact;
-use MauticPlugin\SendgridCallbackBundle\EventListener\SendgridCallbackSubscriber;
-use MauticPlugin\SendgridCallbackBundle\Service\SendgridEventMapper;
+use MauticPlugin\SendgridSmtpFeedbackBundle\EventListener\SendgridCallbackSubscriber;
+use MauticPlugin\SendgridSmtpFeedbackBundle\Service\SendgridEventMapper;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;

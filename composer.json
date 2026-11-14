@@ -1,5 +1,5 @@
 {
-    "name": "educa-insights/sendgrid-callback-bundle",
+    "name": "marlonmendesmarcondes/sendgrid-smtp-feedback-bundle",
     "description": "Trata no /mailer/callback do Mautic 5 os eventos do SendGrid Event Webhook (bounce, dropped, spam, descadastro) e marca Não Contatar. Funciona com envio por SMTP.",
     "type": "mautic-plugin",
     "keywords": [
@@ -10,8 +10,8 @@
         "webhook"
     ],
     "extra": {
-        "install-directory-name": "SendgridCallbackBundle",
-        "display-name": "SendGrid Callback"
+        "install-directory-name": "SendgridSmtpFeedbackBundle",
+        "display-name": "SendGrid SMTP Feedback"
     },
     "license": "proprietary",
     "require": {

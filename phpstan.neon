@@ -7,4 +7,4 @@ parameters:
         - DependencyInjection
     bootstrapFiles:
         - /var/www/html/vendor/autoload.php
-    tmpDir: /tmp/phpstan-sendgrid-callback
+    tmpDir: /tmp/phpstan-sendgrid-smtp-feedback

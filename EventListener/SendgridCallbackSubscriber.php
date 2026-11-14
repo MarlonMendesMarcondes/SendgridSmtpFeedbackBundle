@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\SendgridCallbackBundle\EventListener;
+namespace MauticPlugin\SendgridSmtpFeedbackBundle\EventListener;
 
 use Mautic\CoreBundle\Helper\CoreParametersHelper;
 use Mautic\EmailBundle\EmailEvents;
 use Mautic\EmailBundle\Event\TransportWebhookEvent;
 use Mautic\EmailBundle\Model\TransportCallback;
-use MauticPlugin\SendgridCallbackBundle\Service\SendgridEventMapper;
+use MauticPlugin\SendgridSmtpFeedbackBundle\Service\SendgridEventMapper;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;

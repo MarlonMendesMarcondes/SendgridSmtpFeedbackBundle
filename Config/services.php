@@ -12,6 +12,6 @@ return function (ContainerConfigurator $configurator): void {
         ->autoconfigure()
         ->public();
 
-    $services->load('MauticPlugin\\SendgridCallbackBundle\\', '../')
+    $services->load('MauticPlugin\\SendgridSmtpFeedbackBundle\\', '../')
         ->exclude('../{'.implode(',', MauticCoreExtension::DEFAULT_EXCLUDES).'}');
 };

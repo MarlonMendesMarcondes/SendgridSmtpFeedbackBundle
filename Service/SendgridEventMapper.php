@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\SendgridCallbackBundle\Service;
+namespace MauticPlugin\SendgridSmtpFeedbackBundle\Service;
 
 use Mautic\LeadBundle\Entity\DoNotContact;
 

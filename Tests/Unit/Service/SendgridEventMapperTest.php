@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MauticPlugin\SendgridCallbackBundle\Tests\Unit\Service;
+namespace MauticPlugin\SendgridSmtpFeedbackBundle\Tests\Unit\Service;
 
 use Mautic\LeadBundle\Entity\DoNotContact;
-use MauticPlugin\SendgridCallbackBundle\Service\SendgridEventMapper;
+use MauticPlugin\SendgridSmtpFeedbackBundle\Service\SendgridEventMapper;
 use PHPUnit\Framework\TestCase;
 
 class SendgridEventMapperTest extends TestCase

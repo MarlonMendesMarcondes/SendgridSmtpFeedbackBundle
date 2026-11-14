@@ -1,4 +1,4 @@
-# SendGrid Callback Bundle
+# SendGrid SMTP Feedback Bundle
 
 Plugin do Mautic 5 que trata, no **`/mailer/callback`** do próprio Mautic, os eventos do
 SendGrid Event Webhook (bounce, dropped, spam e descadastro) e marca o contato como
@@ -79,7 +79,7 @@ O comentário do Não Contatar fica `SendGrid <evento>: <motivo>`. Por exemplo:
 
 ## Instalação (em cada instância Mautic 5)
 
-1. **Copie a pasta** `SendgridCallbackBundle` para `plugins/` da instância.
+1. **Copie a pasta** `SendgridSmtpFeedbackBundle` para `plugins/` da instância.
 2. **Configure o token** em `app/config/local.php`:
    ```php
    'sendgrid_callback_token' => '<token longo e aleatório>',
@@ -135,13 +135,13 @@ no SendGrid, e o n8n mandar cada evento só para a instância que enviou.
 ## Estrutura do projeto
 
 ```
-SendgridCallbackBundle/
-├── SendgridCallbackBundle.php                      classe do bundle (PluginBundleBase, vazia)
+SendgridSmtpFeedbackBundle/
+├── SendgridSmtpFeedbackBundle.php                      classe do bundle (PluginBundleBase, vazia)
 ├── Config/
 │   ├── config.php                                  nome, versão e parâmetros padrão
 │   └── services.php                                registro dos serviços (autowire + autoconfigure)
 ├── DependencyInjection/
-│   └── SendgridCallbackExtension.php               carrega o Config/services.php
+│   └── SendgridSmtpFeedbackExtension.php               carrega o Config/services.php
 ├── EventListener/
 │   └── SendgridCallbackSubscriber.php              entrada HTTP: reconhece o corpo, token, Não Contatar
 ├── Service/
@@ -164,8 +164,8 @@ integração. Por isso não há nada para ativar em Configurações > Plugins, e
 
 ```
 Kernel do Mautic
-  └─ SendgridCallbackBundle            (descoberto em plugins/)
-       └─ SendgridCallbackExtension    (achada pela convenção de nome do Symfony)
+  └─ SendgridSmtpFeedbackBundle            (descoberto em plugins/)
+       └─ SendgridSmtpFeedbackExtension    (achada pela convenção de nome do Symfony)
             └─ Config/services.php     (load() da pasta toda, menos DEFAULT_EXCLUDES)
                  ├─ SendgridEventMapper
                  └─ SendgridCallbackSubscriber  ← autoconfigure: vira listener de
@@ -185,7 +185,7 @@ POST /mailer/callback
 ```
 
 Como o plugin tem `Config/services.php`, o loader global do Mautic **não** registra
-os serviços dele. Quem carrega é a `SendgridCallbackExtension`. Se um dia ela for
+os serviços dele. Quem carrega é a `SendgridSmtpFeedbackExtension`. Se um dia ela for
 removida, o `services.php` precisa sair junto, e vice-versa.
 
 ### Classes
@@ -268,7 +268,7 @@ caminho na imagem Docker oficial `mautic/mautic`. Versões usadas: PHPUnit 10.5 
 PHPStan 1.12.
 
 ```bash
-cd /var/www/html/docroot/plugins/SendgridCallbackBundle
+cd /var/www/html/docroot/plugins/SendgridSmtpFeedbackBundle
 
 # Testes
 phpunit
@@ -278,4 +278,4 @@ phpstan analyse -c phpstan.neon
 ```
 
 Estilo de código: o `ecs.php` da raiz do Mautic
-(`ecs check plugins/SendgridCallbackBundle --config ecs.php`).
+(`ecs check plugins/SendgridSmtpFeedbackBundle --config ecs.php`).

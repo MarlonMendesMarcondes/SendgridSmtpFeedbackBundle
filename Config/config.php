@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'name'        => 'SendGrid Callback',
+    'name'        => 'SendGrid SMTP Feedback',
     'description' => 'Recebe no /mailer/callback os eventos do SendGrid (bounce, dropped, spam, descadastro) e marca o contato como Não Contatar. Funciona com envio por SMTP.',
     'version'     => '1.0.0',
     'author'      => 'Educa Insights',
